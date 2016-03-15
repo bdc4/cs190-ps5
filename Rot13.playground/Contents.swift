@@ -69,12 +69,15 @@ Uncomment the following two lines to get started:
  class Rot13: Crypto {
     
     func encrypt(plainText: String) -> String {
-        
+       let output = rot13(plainText)
+        return output
     }
     
-    func decrypt(cipherText: String) -> String
     
-}
+    func decrypt(cipherText: String) -> String {
+        let output = rot13(cipherText)
+        return output
+    }
 
 //Code provided by Sam Allen. Used for educational purposes. All rights reserved by the creating party.
 
@@ -119,18 +122,8 @@ func rot13(value: String) -> String {
     }
     // Return String.
     return String(result)
+    }
 }
-
-// Test the method.
-let input = "Do you have any cat pictures?"
-let result = rot13(input)
-let roundTrip = rot13(result)
-
-print(input)
-print(result)
-print(roundTrip)
-
-
 /*:
 The rest of this file contains the unit tests that run automatically as you edit the code. You shouldn't have to mess with the unit tests unless I made a mistake writing them.
 */
